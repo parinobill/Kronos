@@ -60,7 +60,8 @@ def get_stock_data_eastmoney(stock_code="002354", start_year=2024, end_year=2025
         }
 
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
+            # Using a more recent Chrome UA to reduce chance of being blocked
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
             'Referer': 'https://quote.eastmoney.com/',
             'Accept': '*/*',
         }
@@ -96,6 +97,4 @@ def get_stock_data_eastmoney(stock_code="002354", start_year=2024, end_year=2025
                 print("❌ 无法找到JSON数据边界")
                 return None
 
-            print(f"API返回数据状态: {data.get('rc', 'N/A')}")
-
-            if data and data.get('data') i
+            print(f"API返回数据状
